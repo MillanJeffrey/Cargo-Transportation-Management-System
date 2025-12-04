@@ -105,23 +105,23 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(177, 628);
+            this.panel1.Size = new System.Drawing.Size(160, 628);
             this.panel1.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Location = new System.Drawing.Point(191, 393);
+            this.panel2.Location = new System.Drawing.Point(169, 389);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 239);
+            this.panel2.Size = new System.Drawing.Size(956, 243);
             this.panel2.TabIndex = 7;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Location = new System.Drawing.Point(191, 4);
+            this.panel3.Location = new System.Drawing.Point(169, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(934, 379);
+            this.panel3.Size = new System.Drawing.Size(956, 379);
             this.panel3.TabIndex = 8;
             // 
             // Form2
