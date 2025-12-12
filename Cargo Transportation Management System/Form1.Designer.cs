@@ -37,6 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,7 +93,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(124, 188);
+            this.label3.Location = new System.Drawing.Point(125, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 24);
             this.label3.TabIndex = 6;
@@ -138,12 +139,23 @@
             this.textBox1.Size = new System.Drawing.Size(248, 22);
             this.textBox1.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button2.Location = new System.Drawing.Point(285, 208);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Register?";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Location = new System.Drawing.Point(154, 26);
+            this.panel3.Location = new System.Drawing.Point(154, 78);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(130, 126);
+            this.panel3.Size = new System.Drawing.Size(120, 95);
             this.panel3.TabIndex = 9;
             // 
             // Form1
@@ -152,6 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(453, 546);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -182,6 +195,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
     }
 }
 
