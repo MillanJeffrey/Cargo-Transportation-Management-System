@@ -1,6 +1,6 @@
 # Cargo Transportation Management - Starter (WinForms + EF Core + SQLite)
 
-This is a starter Cargo Transportation Management System implemented as a Windows Forms application using .NET 6 and Entity Framework Core with SQLite.
+This is a Cargo Transportation Management System implemented as a Windows Forms application using .NET 6 and Entity Framework Core with SQLite.
 
 Quickstart (Visual Studio 2022)
 1. Create a new solution folder and add the projects/files from this repo structure.
