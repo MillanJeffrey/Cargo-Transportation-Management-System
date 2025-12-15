@@ -123,7 +123,7 @@
             this.BuildGridColumn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BuildGridColumn.Location = new System.Drawing.Point(155, 12);
             this.BuildGridColumn.Name = "BuildGridColumn";
-            this.BuildGridColumn.Size = new System.Drawing.Size(961, 585);
+            this.BuildGridColumn.Size = new System.Drawing.Size(961, 535);
             this.BuildGridColumn.TabIndex = 7;
             // 
             // pictureBox1
@@ -145,6 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).EndInit();

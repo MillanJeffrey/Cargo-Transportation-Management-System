@@ -93,11 +93,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(125, 176);
+            this.label3.Location = new System.Drawing.Point(105, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 24);
+            this.label3.Size = new System.Drawing.Size(222, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Welcome To C.T.M.S.";
             // 
@@ -156,11 +156,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pictureBox1.BackgroundImage = global::Cargo_Transportation_Management_System.Properties.Resources.account;
-            this.pictureBox1.Location = new System.Drawing.Point(166, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(174, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 90);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 88);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -169,7 +167,7 @@
             this.AcceptButton = this.lognbutton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(446, 546);
             this.Controls.Add(this.pictureBox1);
