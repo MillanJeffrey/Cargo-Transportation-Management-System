@@ -28,20 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
+            this.BuildGridColumn = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuildGridColumn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(29, 547);
+            this.button1.Location = new System.Drawing.Point(22, 556);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 30);
+            this.button1.Size = new System.Drawing.Size(77, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,6 +58,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
@@ -62,7 +72,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 266);
+            this.button4.Location = new System.Drawing.Point(22, 310);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(89, 33);
             this.button4.TabIndex = 3;
@@ -71,7 +81,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(22, 193);
+            this.button3.Location = new System.Drawing.Point(22, 248);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(89, 33);
             this.button3.TabIndex = 2;
@@ -80,7 +90,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(22, 339);
+            this.button5.Location = new System.Drawing.Point(22, 367);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(89, 33);
             this.button5.TabIndex = 4;
@@ -89,7 +99,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(22, 110);
+            this.button2.Location = new System.Drawing.Point(22, 186);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 33);
             this.button2.TabIndex = 1;
@@ -97,17 +107,49 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(20, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 27);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "C.T.M.S.";
+            // 
+            // BuildGridColumn
+            // 
+            this.BuildGridColumn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BuildGridColumn.Location = new System.Drawing.Point(155, 12);
+            this.BuildGridColumn.Name = "BuildGridColumn";
+            this.BuildGridColumn.Size = new System.Drawing.Size(961, 585);
+            this.BuildGridColumn.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(25, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 77);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1128, 635);
+            this.Controls.Add(this.BuildGridColumn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuildGridColumn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +162,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.Data.VirtualServerModeSource virtualServerModeSource1;
+        private System.Windows.Forms.DataGridView BuildGridColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
