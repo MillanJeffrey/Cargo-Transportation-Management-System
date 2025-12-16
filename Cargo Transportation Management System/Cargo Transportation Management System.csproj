@@ -59,7 +59,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargoTransportationManagementSystem.Data\Models\Cargo.cs" />
+    <Compile Include="CargoTransportationManagementSystem.Data\Models\Driver.cs" />
     <Compile Include="CargoTransportationManagementSystem.Data\Models\Shipments.cs" />
+    <Compile Include="CargoTransportationManagementSystem.Data\Models\Vehicle.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

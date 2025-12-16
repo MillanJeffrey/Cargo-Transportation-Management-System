@@ -18,10 +18,10 @@ namespace Cargo_Transportation_Management_System.CargoTransportationManagementSy
 
             // Links
             public int? DriverId { get; set; }
-            public Driver? Driver { get; set; }
+            public Driver Driver { get; set; }
 
             public int? VehicleId { get; set; }
-            public Vehicle? Vehicle { get; set; }
+            public Vehicle Vehicle { get; set; }
 
             public List<Cargo> Cargos { get; set; } = new List<Cargo>();
         }
