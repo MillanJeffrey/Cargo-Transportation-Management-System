@@ -15,6 +15,8 @@ namespace Cargo_Transportation_Management_System
         public Form2()
         {
             InitializeComponent();
+            //dgvshipment.AutoGenerateColumns = false;
+            //BuildGridColumn();
         }
 
         private void button2_Click(object sender, EventArgs e)
