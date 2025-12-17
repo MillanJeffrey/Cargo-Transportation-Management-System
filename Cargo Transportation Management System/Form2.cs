@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Cargo_Transportation_Management_System.CargoTransportationManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Cargo_Transportation_Management_System.CargoTransportationManagementSystem.Data.Models;
+using System.Security.Cryptography;
 
 namespace Cargo_Transportation_Management_System
 {
@@ -37,6 +38,8 @@ namespace Cargo_Transportation_Management_System
             DataGridView.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Vehicle", DataPropertyName = "VehiclePlate", Width = 120 });
             DataGridView.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Departure", DataPropertyName = "DepartureDate", Width = 140 });
             DataGridView.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Arrival", DataPropertyName = "ArrivalDate", Width = 140 });
+            
+            DataGridView.Columns.AddRange(new DataGridViewColumn[] {colID, colOrigin, colDestination, colDriver, colVehicle, colDeparture, colArrival, colWeight});
         }
 
         private void btnlogout_Click(object sender, EventArgs e)
@@ -111,6 +114,8 @@ namespace Cargo_Transportation_Management_System
                 MessageBox.Show("Seeded sample data.", "Seed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             }
+
+            LoadShipments();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -156,6 +161,126 @@ namespace Cargo_Transportation_Management_System
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var origin = txtOrigin.Text?.Trim() ?? "";
+            var destination = txtDestination.Text?.Trim() ?? "";
+            var driver = txtDriver.Text?.Trim() ?? "";
+            var vehicle = txtVehicle.Text?.Trim() ?? "";
+            var weight = txtWeight.Text?.Trim() ?? "";
+
+
+            if (string.IsNullOrEmpty(origin) && string.IsNullOrEmpty(destination))
+            {
+                MessageBox.Show("Please enter Origin or Destination.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var db = new ApplicationDbContext())
+                {
+                    // find or create driver
+                    Driver driverName = null;
+                    if (!string.IsNullOrEmpty(driver))
+                    {
+                        driverName = db.Drivers.SingleOrDefault(d => d.Name == driver);
+                        if (driver == null)
+                        {
+                            driverName = new Driver { Name = driver, LicenseNumber = "" };
+                            db.Drivers.Add(driverName);
+                            db.SaveChanges(); // save to get Id
+                        }
+                    }
+
+                    // find or create vehicle
+                    Vehicle vehiclePlate = null;
+                    if (!string.IsNullOrEmpty(vehicle))
+                    {
+                        vehiclePlate = db.Vehicles.SingleOrDefault(v => v.PlateNumber == vehicle);
+                        if (vehicle == null)
+                        {
+                            vehiclePlate = new Vehicle { PlateNumber = vehicle, CapacityKg = 0 };
+                            db.Vehicles.Add(vehiclePlate);
+                            db.SaveChanges(); // save to get Id
+                        }
+
+                        var s = new Shipments
+                        {
+                            Origin = origin,
+                            Destination = destination,
+                            DepartureDate = DateTime.Now,
+                            ArrivalDate = null,
+                            DriverId = driverName?.Id,
+                            VehicleId = vehiclePlate?.Id,
+
+                        };
+                        db.Shipments.Add(s);
+                        db.SaveChanges();
+                    }
+
+                    // clear inputs and refresh grid
+                    txtOrigin.Clear();
+                    txtDestination.Clear();
+                    txtDriver.Clear();
+                    txtVehicle.Clear();
+                    txtWeight.Clear();
+                    LoadShipments();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding shipment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (DataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select one or more rows to delete.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var confirm = MessageBox.Show($"Delete {DataGridView.SelectedRows.Count} selected shipment(s)?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                var ids = DataGridView.SelectedRows
+                    .OfType<DataGridViewRow>()
+                    .Select(r =>
+                    {
+                        var val = r.Cells["colId"].Value;
+                        return val == null ? 0 : Convert.ToInt32(val);
+                    })
+                    .Where(id => id > 0)
+                    .ToList();
+
+                if (ids.Count == 0)
+                {
+                    MessageBox.Show("No valid shipment Ids were selected.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                using (var db = new ApplicationDbContext())
+                {
+                    var toDelete = db.Shipments.Where(s => ids.Contains(s.Id)).ToList();
+                    if (toDelete.Count > 0)
+                    {
+                        db.Shipments.RemoveRange(toDelete);
+                        db.SaveChanges();
+                    }
+                }
+
+                LoadShipments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting shipment(s): {ex.Message}", "Delete error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
