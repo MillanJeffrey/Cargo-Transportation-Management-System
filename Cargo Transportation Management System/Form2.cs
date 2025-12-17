@@ -63,7 +63,6 @@ namespace Cargo_Transportation_Management_System
 
                 dgvShipments.DataSource = list;
             }
-        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
