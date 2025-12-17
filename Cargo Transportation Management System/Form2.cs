@@ -18,8 +18,20 @@ namespace Cargo_Transportation_Management_System
         public Form2()
         {
             InitializeComponent();
-            //dgvshipment.AutoGenerateColumns = false;
-            //BuildGridColumn();
+            dgvshipment.AutoGenerateColumns = false;
+            BuildGridColumn();
+        }
+
+        private void BuildGridColumn()
+        {
+            dgvShipments.Columns.Clear();
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Id", DataPropertyName = "Id", Width = 50 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Origin", DataPropertyName = "Origin", Width = 120 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Destination", DataPropertyName = "Destination", Width = 120 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Driver", DataPropertyName = "DriverName", Width = 120 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Vehicle", DataPropertyName = "VehiclePlate", Width = 120 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Departure", DataPropertyName = "DepartureDate", Width = 140 });
+            dgvShipments.Columns.Add(new DataGridViewTextBoxColumn() { HeaderText = "Arrival", DataPropertyName = "ArrivalDate", Width = 140 });
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -120,4 +132,10 @@ namespace Cargo_Transportation_Management_System
                 dgvShipments.DataSource = list;
             }
         }
+
+        private void Form2_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+
+        }
+    }
 }

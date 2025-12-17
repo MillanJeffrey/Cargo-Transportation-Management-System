@@ -37,14 +37,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
             this.BuildGridColumn = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehiclePlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VehiclePlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuildGridColumn)).BeginInit();
@@ -52,7 +53,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(22, 556);
+            this.btnLogOut.Location = new System.Drawing.Point(22, 561);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(77, 29);
             this.btnLogOut.TabIndex = 0;
@@ -115,53 +116,12 @@
             this.DriverName,
             this.VehiclePlate,
             this.DepartureDate,
-            this.ArrivalDate});
+            this.ArrivalDate,
+            this.Clear});
             this.BuildGridColumn.Location = new System.Drawing.Point(155, 54);
             this.BuildGridColumn.Name = "BuildGridColumn";
             this.BuildGridColumn.Size = new System.Drawing.Size(961, 503);
             this.BuildGridColumn.TabIndex = 7;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // Origin
-            // 
-            this.Origin.HeaderText = "Origin";
-            this.Origin.Name = "Origin";
-            this.Origin.Width = 120;
-            // 
-            // Destination
-            // 
-            this.Destination.HeaderText = "Destination";
-            this.Destination.Name = "Destination";
-            this.Destination.Width = 120;
-            // 
-            // DriverName
-            // 
-            this.DriverName.HeaderText = "Driver";
-            this.DriverName.Name = "DriverName";
-            this.DriverName.Width = 120;
-            // 
-            // VehiclePlate
-            // 
-            this.VehiclePlate.HeaderText = "Vehicle";
-            this.VehiclePlate.Name = "VehiclePlate";
-            this.VehiclePlate.Width = 120;
-            // 
-            // DepartureDate
-            // 
-            this.DepartureDate.HeaderText = "Departure";
-            this.DepartureDate.Name = "DepartureDate";
-            this.DepartureDate.Width = 140;
-            // 
-            // ArrivalDate
-            // 
-            this.ArrivalDate.HeaderText = "Arrival";
-            this.ArrivalDate.Name = "ArrivalDate";
-            this.ArrivalDate.Width = 140;
             // 
             // panel2
             // 
@@ -170,6 +130,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(961, 36);
             this.panel2.TabIndex = 8;
+            // 
+            // ArrivalDate
+            // 
+            this.ArrivalDate.HeaderText = "Arrival";
+            this.ArrivalDate.Name = "ArrivalDate";
+            this.ArrivalDate.Width = 140;
+            // 
+            // DepartureDate
+            // 
+            this.DepartureDate.HeaderText = "Departure";
+            this.DepartureDate.Name = "DepartureDate";
+            this.DepartureDate.Width = 140;
+            // 
+            // VehiclePlate
+            // 
+            this.VehiclePlate.HeaderText = "Vehicle";
+            this.VehiclePlate.Name = "VehiclePlate";
+            this.VehiclePlate.Width = 120;
+            // 
+            // DriverName
+            // 
+            this.DriverName.HeaderText = "Driver";
+            this.DriverName.Name = "DriverName";
+            this.DriverName.Width = 120;
+            // 
+            // Destination
+            // 
+            this.Destination.HeaderText = "Destination";
+            this.Destination.Name = "Destination";
+            this.Destination.Width = 120;
+            // 
+            // Origin
+            // 
+            this.Origin.HeaderText = "Origin";
+            this.Origin.Name = "Origin";
+            this.Origin.Width = 120;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // Clear
+            // 
+            this.Clear.HeaderText = "Clear";
+            this.Clear.Name = "Clear";
             // 
             // Form2
             // 
@@ -184,6 +191,7 @@
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.DpiChanged += new System.Windows.Forms.DpiChangedEventHandler(this.Form2_DpiChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).EndInit();
@@ -201,6 +209,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.Data.VirtualServerModeSource virtualServerModeSource1;
         private System.Windows.Forms.DataGridView BuildGridColumn;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Origin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Destination;
@@ -208,6 +217,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehiclePlate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartureDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalDate;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewButtonColumn Clear;
     }
 }
