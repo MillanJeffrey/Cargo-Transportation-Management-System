@@ -13,6 +13,6 @@ namespace Cargo_Transportation_Management_System.CargoTransportationManagementSy
             public string PlateNumber { get; set; } = "";
             public int CapacityKg { get; set; }
             // Add type, status, lastMaintenance, etc.
-    
+        
     }
 }

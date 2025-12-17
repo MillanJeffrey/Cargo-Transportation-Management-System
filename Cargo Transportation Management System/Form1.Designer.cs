@@ -38,10 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lognbutton
@@ -93,11 +91,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(105, 151);
+            this.label3.Location = new System.Drawing.Point(92, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 25);
+            this.label3.Size = new System.Drawing.Size(250, 27);
             this.label3.TabIndex = 6;
             this.label3.Text = "Welcome To C.T.M.S.";
             // 
@@ -154,15 +152,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Cargo_Transportation_Management_System.Properties.Resources.account5;
-            this.pictureBox1.Location = new System.Drawing.Point(174, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 88);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AcceptButton = this.lognbutton;
@@ -171,7 +160,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(446, 546);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -185,7 +173,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +190,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

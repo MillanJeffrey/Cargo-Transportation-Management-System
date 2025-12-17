@@ -8,22 +8,21 @@ namespace Cargo_Transportation_Management_System.CargoTransportationManagementSy
 {
     internal class Shipments
     {
-        public class Shipment
-        {
-            public int Id { get; set; }
-            public string Origin { get; set; } = "";
-            public string Destination { get; set; } = "";
-            public DateTime DepartureDate { get; set; } = DateTime.UtcNow;
-            public DateTime? ArrivalDate { get; set; }
+        
+        public int Id { get; set; }
+        public string Origin { get; set; } = "";
+        public string Destination { get; set; } = "";
+        public DateTime DepartureDate { get; set; } = DateTime.UtcNow;
+        public DateTime? ArrivalDate { get; set; }
 
-            // Links
-            public int? DriverId { get; set; }
-            public Driver Driver { get; set; }
+        // Links
+        public int? DriverId { get; set; }
+        public Driver Driver { get; set; }
 
-            public int? VehicleId { get; set; }
-            public Vehicle Vehicle { get; set; }
+        public int? VehicleId { get; set; }
+        public Vehicle Vehicle { get; set; }
 
-            public List<Cargo> Cargos { get; set; } = new List<Cargo>();
-        }
+        public List<Cargo> Cargos { get; set; } = new List<Cargo>();
+        
     }
 }

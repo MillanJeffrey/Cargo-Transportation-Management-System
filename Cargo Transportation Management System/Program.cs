@@ -16,6 +16,7 @@ namespace Cargo_Transportation_Management_System
         [STAThread]
         static void Main()
         {
+            //Ensure database and seed minimal data on first run.
             using (var db = new ApplicationDbContext())
             {
                 db.Database.EnsureCreated();
